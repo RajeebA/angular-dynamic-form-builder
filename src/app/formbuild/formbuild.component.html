@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xs-12 gradient"></div>
+    <div class="col-sm-12 col-md-8 col-lg-8 col-xs-12 full-height w-100 ">
+      <form class="form " [formGroup]="defualtForm" *ngIf="defualtForm" (ngSubmit)="onSubmit()">
+        <div class="row headerWrapper mb-4">
+          <h4 class="header ">Enter your details</h4>
+          <button type="button" class="btn btn-labeled btn-default editWrapper" (click)="onEdit()">
+            <span class="btn-label">
+              <i class="fas fa-edit text-primary"
+                [ngClass]="editMode ? 'fa fa-times text-danger' : 'fas fa-edit text-primary'"></i>
+            </span><span class="text-primary" *ngIf="!editMode">edit form</span>
+            <span class="text-danger" *ngIf="editMode">Close</span>
+          </button>
+        </div>
+
+        <div class="row">
+          <div *ngFor="let item of allFields; index as i;" class="mb-4"
+            [ngClass]="item.col_type == 'col-1' ? 'col-md-12' : 'col-md-6'">
+            <div class="input-group">
+              <input [type]="item.type" class="form-control" [formControlName]="item.name" [placeholder]="item.label"
+                [name]="item.name" [ngClass]="{ 'is-invalid': submitted && f[item.name].errors }">
+              <div class="input-group-append input-icon" (click)="onDelete(item)" *ngIf="editMode">
+                <i class="fas fa-trash text-danger"></i>
+              </div>
+              <div *ngIf="submitted && f[item.name].errors" class="invalid-feedback">
+                <div *ngIf="f[item.name].errors.required">{{item.label}} is required</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary submit-button">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

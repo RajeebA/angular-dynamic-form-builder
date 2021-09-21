@@ -1,0 +1,61 @@
+.full-height {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gradient {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    #422bb2,
+    #6036b8,
+    #7942bf,
+    #8f4ec5,
+    #a45ccc
+  );
+}
+.form {
+  height: 500px;
+  width: 600px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  padding: 3rem;
+}
+.header {
+  color: #535353;
+}
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.editWrapper {
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  height: 30px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.submit-button {
+  width: 200px;
+}
+.form-control {
+  background-color: #f0ecec;
+}
+.input-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -20px;
+  z-index: 10;
+  cursor: pointer;
+}
+.input-icon i {
+  font-size: 10px;
+}
